@@ -1,6 +1,3 @@
-function showSection(sectionId) {
-    document.querySelectorAll('.content').forEach(sec => {
-        sec.classList.remove('active');
-    });
-    document.getElementById(sectionId).classList.add('active');
+function openProject(id) {
+window.location.href = `project.html?id=${id}`;
 }
