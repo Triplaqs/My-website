@@ -1,60 +1,31 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Triplaqs' website</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<title>Triplaqs – Projects</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1><a href="#" onclick="showSection('Main')">Triplaqs</a></h1>
-        <h2>Some of the projects I've made so far.</h2>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="showSection('CP')">Computer science</a></li>
-                <li><a href="#" onclick="showSection('AD')">Audio-visual</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+<a href="index.html" class="home">🏠</a>
+<a href="about.html" class="title">Triplaqs</a>
+</header>
 
-    <main>
-        <section id="Main" class="content">
-            <h2>Who am I ?</h2>
-            <p>I'm a french computer science student, I am also passionated by cinema</p>
-        </section>
 
-        <section id="CP" class="content active">
-            <h2>💻 Computing science</h2>
-            <p>Behind a computer, everything is possible</p>
-                <!--on essaye -->
-                <canvas id="glcanvas" width="400" height="300"></canvas>
-                <script>
-                    const canvas = document.getElementById("glcanvas");
-                    const gl = canvas.getContext("webgl");
+<main class="projects">
+<div class="project-card" onclick="openProject('project1')">
+<h2>Titre du projet</h2>
+<p>Description courte du projet.</p>
+</div>
 
-                    if (!gl) {
-                        alert("Ton navigateur ne supporte pas WebGL !");
-                    }
 
-                    // Couleur de fond (rouge pour l’exemple)
-                    gl.clearColor(1.0, 0.0, 0.0, 1.0);
-                    gl.clear(gl.COLOR_BUFFER_BIT);
-                </script>
-                <!-- -->
-        </section>
+<div class="project-card" onclick="openProject('project2')">
+<h2>Titre du projet</h2>
+<p>Description courte du projet.</p>
+</div>
+</main>
 
-        <section id="AD" class="content">
-            <h2>🎬 Audio-visual</h2>
-            <p>Behind a camera, nothing is impossible</p>
-        </section>
-    </main>
 
-    <footer>
-        <p>Triplaqs' website - 2026</p>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
-
