@@ -1,97 +1,126 @@
-:root {
---bg: #0b0f1a;
---surface: #12182b;
---card: #1a2140;
---accent: #7c7cff;
---accent-2: #4fd1c5;
---text: #e6e8f0;
---muted: #9aa0b5;
+/* --- MISE EN PAGE : ACCUEIL (Liste verticale) --- */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto; /* Centre la liste */
 }
 
-
-* { box-sizing: border-box; }
-
-
-body {
-margin: 0;
-font-family: Inter, system-ui, sans-serif;
-background: radial-gradient(circle at top, #12182b, var(--bg));
-color: var(--text);
+.project-card-row {
+    display: flex; /* Active l'alignement horizontal */
+    align-items: center;
+    background-color: #1a1a2e; /* Couleur fond sombre (ajuste selon ton thème) */
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    border: 1px solid #333;
+    transition: transform 0.2s;
 }
 
-
-.header {
-display: flex;
-align-items: center;
-gap: 1rem;
-padding: 1rem 2rem;
-background: rgba(11,15,26,0.85);
-backdrop-filter: blur(12px);
-position: sticky;
-top: 0;
-z-index: 10;
+.project-card-row:hover {
+    transform: translateY(-5px);
+    background-color: #232342;
 }
 
-
-.logo {
-font-size: 2rem;
-font-weight: 800;
-color: white;
-text-decoration: none;
+.card-image {
+    background-color: white; /* Le fameux cadre blanc */
+    width: 200px; /* Largeur fixe pour l'image */
+    height: 120px;
+    flex-shrink: 0; /* Empêche l'image de s'écraser */
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 20px;
 }
 
-
-.home {
-font-size: 1.4rem;
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-
-.hero {
-text-align: center;
-padding: 5rem 2rem 3rem;
+.card-content h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
 }
 
-
-.hero h1 {
-font-size: 3rem;
-margin-bottom: 0.5rem;
+/* --- MISE EN PAGE : ABOUT (Côté à côte) --- */
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Prend la hauteur de l'écran */
 }
 
-
-.hero p {
-color: var(--muted);
-font-size: 1.1rem;
+.about-content {
+    display: flex; /* Met l'image et le texte côte à côte */
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1000px;
+    padding: 20px;
 }
 
-
-.container {
-padding: 2rem 2rem 4rem;
+.about-image {
+    background-color: white; /* Cadre blanc */
+    padding: 5px;
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
 }
 
-
-.projects-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 2.5rem;
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-
-.project-card {
-background: linear-gradient(180deg, var(--card), var(--surface));
-border-radius: 20px;
-overflow: hidden;
-text-decoration: none;
-color: inherit;
-transition: transform 0.35s ease, box-shadow 0.35s ease;
+.about-text {
+    flex: 1;
+    color: white;
 }
 
-
-.project-card:hover {
-transform: translateY(-10px) scale(1.02);
-box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+.about-text h1 {
+    margin-top: 0;
+    font-size: 3rem;
 }
 
+/* --- MISE EN PAGE : PROJET (Ruban vertical) --- */
+.project-ribbon {
+    max-width: 700px; /* Largeur du "ruban" */
+    margin: 0 auto; /* Centré au milieu */
+    text-align: center; /* Texte centré */
+    padding: 40px 20px;
+    color: white;
+}
 
-.project-card img {
-width: 100%;
+.project-ribbon .project-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.project-ribbon .project-intro {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 50px;
+}
+
+.visual-block {
+    margin-bottom: 60px;
+}
+
+.white-frame {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    height: 350px; /* Hauteur des grands blocs blancs */
+}
+
+.white-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
