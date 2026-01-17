@@ -163,6 +163,7 @@ body {
 .about-content {
     display: flex;
     align-items: flex-start;
+    text-justify: auto;
     gap: 50px;
     max-width: 1000px;
     margin: 80px auto;
