@@ -173,7 +173,7 @@ body {
 .about-image {
     background-color: white; /* Cadre blanc photo */
     padding: 8px;
-    width: 320px;
+    width: 280px; /*320 avant*/
     flex-shrink: 0;
 }
 
