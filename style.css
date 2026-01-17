@@ -48,7 +48,7 @@ body {
 /* --- 4. ACCUEIL : TITRE "MES PROJETS" (Recentré comme avant) --- */
 .hero {
     text-align: center; /* Centre le texte */
-    padding: 80px 20px 40px; /* Un peu d'air en haut et en bas */
+    padding: 30px 20px 40px; /* Un peu d'air en haut et en bas */
 }
 
 .hero h1 {
