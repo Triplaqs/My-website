@@ -180,3 +180,18 @@ body {
     width: 100%;
     display: block;
 }
+
+/* Supprimer le soulignement et mettre en blanc */
+.custom-link {
+    text-decoration: none !important; /* Enlève la ligne sous le lien */
+    color: white !important;          /* Force la couleur blanche */
+    display: inline-block;            /* Permet de mieux gérer l'espacement */
+    margin-bottom: 10px;              /* Ajoute un petit espace sous chaque lien */
+    transition: opacity 0.2s;
+}
+
+/* Optionnel : un petit effet au survol */
+.custom-link:hover {
+    opacity: 0.8;
+    color: var(--accent) !important; /* Devient un peu coloré au survol si tu veux */
+}
