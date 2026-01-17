@@ -116,6 +116,7 @@ body {
 
 /* --- 6. PAGE PROJET (LE RUBAN VERTICAL DÉROULANT) --- */
 .project-container {
+    text-align: center; /*à suppr ?*/
     max-width: 800px; /* Largeur du ruban */
     margin: 0 auto; /* Centré au milieu */
     background: var(--surface); /* Un bleu très sombre, un peu plus clair que le fond */
