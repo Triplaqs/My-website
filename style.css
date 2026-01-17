@@ -116,9 +116,12 @@ body {
 
 /* --- 6. PAGE PROJET (LE RUBAN VERTICAL DÉROULANT) --- */
 .project-container {
-    max-width: 750px; /* Largeur du ruban */
+    max-width: 800px; /* Largeur du ruban */
     margin: 0 auto; /* Centré au milieu */
-    padding: 60px 20px;
+    background: var(--surface); /* Un bleu très sombre, un peu plus clair que le fond */
+    padding: 60px 50px;    /* Marges intérieures pour le texte */
+    box-shadow: 0 0 50px rgba(0,0,0,0.5); /* Ombre pour l'effet "feuille posée" */
+    min-height: 100vh;
 }
 
 .project-container h1 {
