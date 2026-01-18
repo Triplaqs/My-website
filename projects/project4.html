@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Datamatrix generator</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <link rel="icon" type="image/png" href="../attachments/datamatrix.ico">
+    
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="home">🏠</a>
+        <a href="../about.html" class="logo">Triplaqs</a>
+    </header>
+
+    <main class="project-container">
+        
+        <h1 class="project-title">Datamatrix generator</h1>
+        <p class="project-intro">Datamatrix Generator from a 6-integers input I made in highschool.</p>
+
+        <section class="visual-block">
+            <h3>Functioning</h3>
+            <p>This Python</p>
+        </section>
+
+        <section class="visual-block">
+            <h3>Give it a try</h3>
+            <p>Here's a text input bar, enters a 6-digits-long number :</p>
+            <div class="white-frame" style="text-align: center; padding: 20px;">
+                <form method="POST" action="/">
+                    <input type="text" name="input_code" maxlength="6" placeholder="123456" style="padding: 10px; font-size: 16px;">
+                    <button type="submit" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Generate</button>
+                </form>
+
+                {% if error %}
+                    <p style="color: red; margin-top: 10px;">{{ error }}</p>
+                {% endif %}
+
+                {% if image_file %}
+                    <div style="margin-top: 20px;">
+                        <img src="{{ url_for('static', filename=image_file) }}" alt="DataMatrix Result" style="border: 2px solid black;">
+                    </div>
+                {% else %}
+                    {% endif %}
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
