@@ -27,24 +27,98 @@
             <h3>Give it a try</h3>
             <p>Here's a text input bar, enters a 6-digits-long number :</p>
             <div class="white-frame" style="text-align: center; padding: 20px;">
-                <form method="POST" action="/">
-                    <input type="text" name="input_code" maxlength="6" placeholder="123456" style="padding: 10px; font-size: 16px;">
-                    <button type="submit" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Generate</button>
-                </form>
+                <input type="text" id="input_code" maxlength="6" placeholder="123456" style="padding: 10px; font-size: 16px;">
+                <button type="button" py-click="main_process" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Generate</button>
 
-                {% if error %}
-                    <p style="color: red; margin-top: 10px;">{{ error }}</p>
-                {% endif %}
+                <p id="error-msg" style="color: red; margin-top: 10px;"></p>
 
-                {% if image_file %}
-                    <div style="margin-top: 20px;">
-                        <img src="{{ url_for('static', filename=image_file) }}" alt="DataMatrix Result" style="border: 2px solid black;">
-                    </div>
-                {% else %}
-                    {% endif %}
-            </div>
+                <div style="margin-top: 20px;">
+                    <canvas id="output_canvas" width="200" height="200" style="border: 1px solid #ccc; display: none; margin: auto;"></canvas>
+                </div>
         </section>
 
     </main>
-</body>
+    <script type="py">
+        from pyscript import document, window
+        import js
+
+        def reed_Salomon(liste_3_codewords):
+            PP = 301
+            A = [0]*256
+            A[0]=1
+            for i in range(1,256):
+                A[i] = A[i-1] << 1
+                if A[i] > 255:
+                    A[i] ^= PP
+            mul = [[0] * 256 for _ in range(256)]
+            for j in range(256):
+                for i in range(256):
+                    mul[A[i]][A[j]] = A[(i+j) % 255]
+            G = [1, 62, 111, 15, 48, 228] 
+            res = liste_3_codewords + [0]*5
+            for i in range(len(liste_3_codewords)):
+                coef = res[i]
+                if coef != 0:
+                    for j in range(1, len(G)):
+                        res[i + j] ^= mul[coef][G[j]]
+            return res[3:]
+
+        def conv_binaire(n):
+            return bin(n)[2:].zfill(8)
+
+        def main_process(event):
+            # 1. Récupération de l'input
+            chaine = document.querySelector("#input_code").value
+            error_el = document.querySelector("#error-msg")
+            canvas = document.querySelector("#output_canvas")
+            ctx = canvas.getContext("2d")
+            
+            error_el.innerText = ""
+            canvas.style.display = "none"
+
+            if not chaine or len(chaine) != 6 or not chaine.isdigit():
+                error_el.innerText = "Erreur : Entrez 6 chiffres."
+                return
+
+            # 2. Logique mathématique (ton code)
+            L2 = [int(chaine[0:2])+130, int(chaine[2:4])+130, int(chaine[4:6])+130]
+            secu = reed_Salomon(L2)
+            L2.extend(secu)
+            L = [conv_binaire(val) for val in L2]
+
+            # 3. Dessin sur le Canvas (Remplace Pillow/Tkinter)
+            order = [
+                "99", "00", "99", "00", "99", "00", "99", "00", "99", "00",
+                "99", "21", "22", "36", "37", "38", "43", "44", "45", "99",
+                "99", "23", "24", "25", "51", "52", "46", "47", "48", "00",
+                "99", "26", "27", "28", "53", "54", "55", "11", "12", "99",
+                "99", "15", "61", "62", "56", "57", "58", "13", "14", "00",
+                "99", "18", "63", "64", "65", "81", "82", "16", "17", "99",
+                "99", "72", "66", "67", "68", "83", "84", "85", "71", "00",
+                "99", "74", "75", "31", "32", "86", "87", "88", "73", "99",
+                "99", "77", "78", "33", "34", "35", "41", "42", "76", "00",
+                "99", "99", "99", "99", "99", "99", "99", "99", "99", "99"
+            ]
+
+            size = 20 # Taille d'un pixel du DataMatrix sur l'écran
+            canvas.style.display = "block"
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+            for i in range(100):
+                row = i // 10
+                col = i % 10
+                val = order[i]
+                
+                is_black = False
+                if val == "99": is_black = True
+                elif val == "00": is_black = False
+                else:
+                    byte_idx = int(val[0]) - 1
+                    bit_idx = int(val[1]) - 1
+                    if L[byte_idx][bit_idx] == '1': is_black = True
+                
+                ctx.fillStyle = "black" if is_black else "white"
+                ctx.fillRect(col * size, row * size, size, size)
+            </script>
+    </body>
 </html>
