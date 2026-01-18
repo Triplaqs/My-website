@@ -186,7 +186,7 @@ body {
 }
 
 .white-frame img {
-    width: 100%;
+    width: 60%; /*100%*/
     height: auto;
     display: block;
     border-radius: 4px;
