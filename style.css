@@ -114,17 +114,6 @@ body {
     color: var(--accent-2);
 }
 
-/* --- 6. PAGE PROJET (LE RUBAN VERTICAL DÉROULANT) --- */
-/*.project-container {
-    text-align: center; /*à suppr ?*//*
-    max-width: 800px; /* Largeur du ruban *//*
-    margin: 0 auto; /* Centré au milieu *//*
-    background: var(--surface); /* Un bleu très sombre, un peu plus clair que le fond *//*
-    padding: 60px 50px;    /* Marges intérieures pour le texte *//*
-    box-shadow: 0 0 50px rgba(0,0,0,0.5); /* Ombre pour l'effet "feuille posée" *//*
-    min-height: 100vh;
-}*/
-
 /* --- PAGE PROJET (LE RUBAN CENTRAL) --- */
 .project-container {
     max-width: 850px;      /* C'est la largeur de ton ruban (tes traits rouges) */
@@ -221,6 +210,7 @@ body {
     width: 280px; /*320 avant*/
     flex-shrink: 0;
 }
+
 
 .about-image img {
     width: 100%;
