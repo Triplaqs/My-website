@@ -192,6 +192,19 @@ body {
     border-radius: 4px;
 }
 
+/* Style pour la première image (optionnel, pour s'assurer qu'elle ne déborde pas) */
+.white-frame img:not(.img-small) {
+    max-width: 60%;      /* Elle prend la majeure partie de la place */
+    height: auto;
+}
+
+/* Style pour la petite image à droite */
+.img-small {
+    max-width: 30%;      /* Environ deux fois plus petite que la première */
+    height: auto;
+    border: 1px solid #ddd; /* Optionnel : un petit cadre pour mieux la voir */
+}
+
 
 /* --- 7. PAGE ABOUT (Horizontal) --- */
 .about-content {
