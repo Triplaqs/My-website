@@ -27,14 +27,27 @@
                 So I naturally thought that with some constraints in data structure, we might actually be able to use the solving of Takuzu as a Correction Code.
                 My searched then split into two parts :
                 <br>First, create a Takuzu Solver and be able to tell how many data loss I could handle without losing the original data (<em>i.e.</em> the number of cases that we can hide on a solved Takuzu grid while keeping a unique solution).
-                <br>Then, determine if we can structure a data sequence of bits as a Takuzu grid.                 
+                <br>Then, determine if we can structure a data sequence of bits as a Takuzu grid.   
+                <br><br> A Takuzu grid is a grid composed of 0 and 1 with the following constraints :
+                <ul>
+                    <li> No more than two identical bits can be adjacent in a row or in a column. </li>
+                    <li> Each row and each column must contain an equal number of 0 and 1. </li>
+                    <li> No two rows and no two columns can be identical. </li>
+                </ul>              
             </p>
 
         <section class="visual-block">
             <h3>Development</h3>
-            <p>The research part</p>
+            <p>The research part concerning the restructuration of a bit sequence I proceeded in 3 steps :
+                <br> First count the number of bit composing the data set and enumerate the different decompositions in Takuzus grid possible (a Takuzu grid is an even number squared bits).
+                <br> Second, we try to decompose our actual bit sequence in the different Takuzus grid list calculated precedently.
+                <br> Third, we check if the decompositions are valid Takuzu grids (respect the 3 constraints listed above).
+                <br>Then if one of them is valid, we can consider that the data sequence can be structured as a Takuzu grid.
+            <br>Here's two example of the algorithm with a 2x2 pixels image which is not transformable into Takuzu grids and a one-pixel image which is transformable into Takuzu grids :
+            </p>
             <div class="white-frame">
-                 <img src="../assets/images/project-placeholder.png" alt="">
+                 <img src="../attachments/binairo.png" alt="">
+                 <img src="../attachments/binairo2.png" alt="">
             </div>
         </section>
 
