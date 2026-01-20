@@ -271,6 +271,11 @@ body {
     width: auto;
 }
 
+.img-small-bigger {
+    height: 300px !important; 
+    width: auto;
+}
+
 /* Le conteneur blanc */
 .white-frame-double-depass {
     background-color: white;
