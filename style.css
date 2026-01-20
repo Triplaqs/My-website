@@ -192,31 +192,56 @@ body {
     border-radius: 4px;
 }*/
 
-
+/*
 .white-frame {
     background-color: white;
     padding: 15px;
     /*margin: 25px 0;
     width: 100%;*/
-    border-radius: 4px;
+    /*border-radius: 4px;
     box-sizing: border-box;
     
     /* Nouvelles propriétés pour l'alignement côte à côte */
-    display: flex;       /* Active le mode Flexbox */
-    align-items: center; /* Centre les images verticalement l'une par rapport à l'autre */
-    justify-content: space-around; /* Crée de l'espace équilibré autour des images */
-    gap: 20px;           /* Espace entre les deux images */
-    width: fit-content;
+    /*display: flex;       /* Active le mode Flexbox */
+    /*align-items: center; /* Centre les images verticalement l'une par rapport à l'autre */
+    /*justify-content: space-around; /* Crée de l'espace équilibré autour des images */
+    /*gap: 20px;           /* Espace entre les deux images */
+    /*width: fit-content;
     margin: 25px auto;
+}
+/*
+.white-frame img {
+    /* On ne veut plus qu'elles fassent 100% de large */
+    /*max-width: 55%;/*45*/    /* Chaque image prend environ un peu moins de la moitié du cadre */
+    /*height: auto;      /* Garde les proportions */
+    /*display: block;
+    border-radius: 4px;
+    object-fit: contain; /* Évite que l'image ne soit déformée */
+/*}*/
+
+.white-frame {
+    background-color: white;
+    padding: 10px;       /* Un padding plus petit pour que le cadre soit fin */
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+    display: flex;       /* Aligne côte à côte */
+    align-items: center; /* Centre verticalement */
+    justify-content: center;
+    gap: 20px;           /* Espace entre les deux images */
+
+    /* LA SOLUTION POUR COLLER AUX IMAGES */
+    width: fit-content;  /* Le cadre s'arrête pile après les images */
+    margin: 25px auto;   /* Centre le bloc entier dans la page */
 }
 
 .white-frame img {
-    /* On ne veut plus qu'elles fassent 100% de large */
-    max-width: 55%;/*45*/    /* Chaque image prend environ un peu moins de la moitié du cadre */
-    height: auto;      /* Garde les proportions */
     display: block;
     border-radius: 4px;
-    object-fit: contain; /* Évite que l'image ne soit déformée */
+    height: auto;        /* Garde les proportions */
+    
+    /* ON REMPLACE LES % PAR DES TAILLES FIXES */
+    width: 400px;        /* Taille de la grande image */
 }
 
 .white-frame-double {
