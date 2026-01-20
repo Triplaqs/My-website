@@ -244,8 +244,35 @@ body {
     width: 400px;        /* Taille de la grande image */
 }
 
-/* Le conteneur qui s'adapte aux images */
+/* Le conteneur blanc */
 .white-frame-double {
+    background-color: white;
+    padding: 15px;
+    margin: 25px auto;
+    width: fit-content;    /* Le cadre colle aux images */
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start; /* Aligne les sommets des images */
+    gap: 20px;
+}
+
+/* On définit une hauteur commune pour les deux images */
+.white-frame-double img {
+    height: 350px;        /* Ajuste cette valeur selon tes envies */
+    width: auto;          /* L'image garde ses proportions (large ou fine) */
+    border-radius: 4px;
+    display: block;
+}
+
+/* Optionnel : si tu veux que la petite soit vraiment plus petite en hauteur aussi */
+.img-small {
+    /* Si tu veux qu'elle soit moins haute que la grande, 
+       tu peux surcharger la hauteur ici, sinon ignore ce bloc */
+    height: 350px !important; 
+}
+
+/* Le conteneur qui s'adapte aux images */
+.white-frame-double-3 {
     background-color: white;
     padding: 15px;
     margin: 25px auto;
@@ -257,7 +284,7 @@ body {
 }
 
 /* La taille "Grande" */
-.img-big {
+.img-big-3 {
     max-width: 55%; 
     /*width: 450px;*/         
     height: auto;
@@ -265,7 +292,7 @@ body {
 }
 
 /* La taille "Petite" */
-.img-small {
+.img-small-3 {
     /*width: 180px;*/
     max-width: 25%;
     height: auto;
