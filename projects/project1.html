@@ -24,7 +24,7 @@
             <h3>3D Foundations</h3>
             <p>I sculpted a 3D bust on Blender. </p>
             <div class="white-frame">
-                 <img src="../attachments/sculpt.png" alt="">
+                 <img src="../attachments/sculpt.png" alt="Bust on Blender">
             </div>
             <p>Here's a 3D view of the Bust:</p>
             <model-viewer 
@@ -35,7 +35,7 @@
             </model-viewer>
             <p>Then I did the retopology of a surface mesh mask around the face.  </p>
             <div class="white-frame">
-                 <img src="../attachments/maskface.png" alt="">
+                 <img src="../attachments/maskface.png" alt="Mask on Blender">
             </div>
             <p>Here's a 3D view of the Mask:</p>
             <model-viewer 
@@ -53,7 +53,17 @@
                 <br>From there, I could use OpenGL to display the mask in a window as followed:
             </p>
             <div class="white-frame">   
-                 <img src="../attachments/neutral_face.png" alt="">
+                 <img src="../attachments/neutral_face.png" alt="Mask displayed on OpenGL">
+            </div>
+        </section>
+
+        <section class="visual-block">
+            <h3>Animation</h3>
+            <p>I made all the phonemes (mouth shapes associated with a specific sound) in Blender. Then I exported them all in my C++ project.
+                <br>Then I displayed a set of vertices that I interpolated from a phoneme to another one. Here's a sample of the transition from neutral face to "a" phoneme:
+            </p>
+            <div class="white-frame">   
+                 <img src="../attachments/neutral_to_a.gif" alt="Sample of Mask animation">
             </div>
         </section>
     </main>

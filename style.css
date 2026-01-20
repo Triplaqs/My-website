@@ -183,10 +183,6 @@ body {
     height: auto;          /* On laisse l'image définir la hauteur */
     border-radius: 4px;
     box-sizing: border-box; /* Évite que le padding ne fasse déborder le cadre */
-    /*tentative à 2 images*/
-    align-items: center; /* Centre verticalement l'image plus petite */
-    justify-content: center; /* Centre l'ensemble horizontalement */
-    gap: 20px;           /* Espace entre les deux images */
 }
 
 .white-frame img {
@@ -196,8 +192,22 @@ body {
     border-radius: 4px;
 }
 
+.white-frame-double {
+    background-color: white;
+    padding: 15px;
+    margin: 25px 0;
+    width: 100%;           /* S'adapte à la largeur du ruban */
+    height: auto;          /* On laisse l'image définir la hauteur */
+    border-radius: 4px;
+    box-sizing: border-box; /* Évite que le padding ne fasse déborder le cadre */
+    align-items: center; /* Centre verticalement l'image plus petite */
+    justify-content: center; /* Centre l'ensemble horizontalement */
+    gap: 20px;           /* Espace entre les deux images */
+}
+
+
 /* Style pour la première image (optionnel, pour s'assurer qu'elle ne déborde pas) */
-.white-frame img:not(.img-small) {
+.white-frame-double img:not(.img-small) {
     max-width: 60%;      /* Elle prend la majeure partie de la place */
     height: auto;
 }
