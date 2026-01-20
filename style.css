@@ -259,13 +259,13 @@ body {
 }
 
 /* Style pour la première image (optionnel, pour s'assurer qu'elle ne déborde pas) */
-.white-frame-double img:not(.img-small-1) {
+.white-frame-double img:not(.img-small) {
     max-width: 55%;      /* Elle prend la majeure partie de la place */
     height: auto;
 }
 
 /* Style pour la petite image à droite */
-.img-small-1 {
+.img-small {
     max-width: 25%;      /* Environ deux fois plus petite que la première */
     height: auto;
     border: 1px solid #ddd; /* Optionnel : un petit cadre pour mieux la voir */
@@ -286,13 +286,13 @@ body {
 }
 
 /* Style pour la première image (optionnel, pour s'assurer qu'elle ne déborde pas) */
-.white-frame-double-2 img:not(.img-small-2) {
+.white-frame-double-2 img:not(.img-tall) {
     max-width: 25%;      /* Elle prend la majeure partie de la place */
     height: auto;
 }
 
 /* Style pour la petite image à droite */
-.img-small-2 {
+.img-tall {
     max-width: 55%;      /* Environ deux fois plus petite que la première */
     height: auto;
     border: 1px solid #ddd; /* Optionnel : un petit cadre pour mieux la voir */
