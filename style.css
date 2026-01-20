@@ -258,14 +258,16 @@ body {
 
 /* La taille "Grande" */
 .img-big {
-    width: 450px;          /* Ajuste selon tes besoins */
+    max-width: 55%; 
+    /*width: 450px;*/         
     height: auto;
     border-radius: 4px;
 }
 
 /* La taille "Petite" */
 .img-small {
-    width: 180px;          /* Ajuste selon tes besoins */
+    /*width: 180px;*/
+    max-width: 25%;
     height: auto;
     border-radius: 4px;
 }
