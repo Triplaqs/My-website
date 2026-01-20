@@ -206,6 +206,8 @@ body {
     align-items: center; /* Centre les images verticalement l'une par rapport à l'autre */
     justify-content: space-around; /* Crée de l'espace équilibré autour des images */
     gap: 20px;           /* Espace entre les deux images */
+    width: fit-content;
+    margin: 25px auto;
 }
 
 .white-frame img {
@@ -229,10 +231,6 @@ body {
     justify-content: center; /* Centre l'ensemble horizontalement */
     gap: 20px;           /* Espace entre les deux images */
     display: flex;         
-    display: flex;         
-    align-items: center;    /* Aligne les images verticalement au centre */
-    justify-content: center; /* Centre l'ensemble horizontalement */
-    gap: 30px;              /* Espace entre les deux images */
 }
 
 /* Style pour la première image (optionnel, pour s'assurer qu'elle ne déborde pas) */
