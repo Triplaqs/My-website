@@ -248,6 +248,33 @@ body {
 .white-frame-double {
     background-color: white;
     padding: 15px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Centre les images à l'intérieur du blanc */
+    align-items: center;     /* Aligne les milieux des images verticalement */
+    gap: 20px;               /* Espace entre les deux images */
+    
+    width: fit-content;      /* Force le cadre à s'arrêter après les images */
+    margin: 25px auto;       /* Centre le cadre blanc au milieu de ta page bleue */
+}
+
+.white-frame-double img {
+    height: 350px;           /*augmente ou baisse ~ 400px */
+    width: auto;             /*ratio */
+    display: block;
+    border-radius: 4px;
+}
+
+.img-small {
+    height: 300px !important; 
+    width: auto;
+}
+
+/* Le conteneur blanc */
+.white-frame-double-depass {
+    background-color: white;
+    padding: 15px;
     margin: 25px auto;
     width: 100%; /*old = fit-content*/   /* Le cadre colle aux images */
     border-radius: 4px;
@@ -257,7 +284,7 @@ body {
 }
 
 /* On définit une hauteur commune pour les deux images */
-.white-frame-double img {
+.white-frame-double-depass img {
     height: 350px;        /* Ajuste cette valeur selon tes envies */
     width: auto;          /* L'image garde ses proportions (large ou fine) */
     border-radius: 4px;
@@ -265,7 +292,7 @@ body {
 }
 
 /* Optionnel : si tu veux que la petite soit vraiment plus petite en hauteur aussi */
-.img-small {
+.img-small-depass {
     /* Si tu veux qu'elle soit moins haute que la grande, 
        tu peux surcharger la hauteur ici, sinon ignore ce bloc */
     height: 350px !important; 
