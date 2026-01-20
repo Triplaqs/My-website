@@ -280,7 +280,7 @@ body {
     border-radius: 4px;
     display: flex;
     align-items: flex-start; /* Aligne les sommets des images */
-    gap: 20px;
+    gap: auto;
 }
 
 /* On définit une hauteur commune pour les deux images */
