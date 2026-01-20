@@ -57,8 +57,15 @@
                 <li> Then I could make a backtracking algorithm to solve the Takuzu grid. </li>
                 <li> In the end, I made an exaustive algorithm that calculate every Takuzu grids of a given dimension, and searched if they were solvable with a given amount of cases deleted.</li>
             </ul>   
-            
-            <br>Here's two example of the algorithm with a 2x2 pixels image which is not transformable into Takuzu grids and a one-pixel image which is transformable into Takuzu grids :
+            We can determine that from 4 cases deleted in any Takuzu grid, we might lose the unicity of the solution. Determining the exact amount of data loss the "Correction Code" can handle.
+            <br> Here are some exemples of resolution and proof results (sadly from bigger than 4x4 Takuzu grids, the exhaustive algorithm crashes due to lack of memory): 
+            </p>
+            <div class="white-frame-double">
+                 <img src="../attachments/resolution.png" alt="Resolution of a Takuzu grid">
+                 <img src="../attachments/cns.png" alt="Calculation of the amount of cases" class="img-small">
+            </div>
+            <p>To conclude, the Takuzu form Correction Code might be very efficient for data transmission with a small amount of data loss. 
+                However, the structuration of a data sequence into a Takuzu grid seems very limited. Furthermore in real life, we don't actually know where are the data losses, making this method unusable.
             </p>
         </section>
 
