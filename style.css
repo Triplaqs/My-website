@@ -276,7 +276,7 @@ body {
     background-color: white;
     padding: 15px;
     margin: 25px auto;
-    width: 100%; /*old = fit-content*/   /* Le cadre colle aux images */
+    width: 95%; /*old = fit-content*/   /* Le cadre colle aux images */
     border-radius: 4px;
     display: flex;
     align-items: flex-start; /* Aligne les sommets des images */
