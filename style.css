@@ -212,7 +212,7 @@ body {
 
 .white-frame img {
     /* On ne veut plus qu'elles fassent 100% de large */
-    max-width: 45%;    /* Chaque image prend environ un peu moins de la moitié du cadre */
+    max-width: 55%;/*45*/    /* Chaque image prend environ un peu moins de la moitié du cadre */
     height: auto;      /* Garde les proportions */
     display: block;
     border-radius: 4px;
