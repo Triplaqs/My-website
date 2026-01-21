@@ -245,8 +245,8 @@ body {
 }
 
 .img-big {
-    height: 180px !important; 
-    width: auto;
+    width: 100% !important; 
+    height: auto;
 }
 
 /* Le conteneur blanc */
