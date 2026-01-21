@@ -244,6 +244,11 @@ body {
     width: 400px;        /* Taille de la grande image */
 }
 
+.img-big {
+    height: 180px !important; 
+    width: auto;
+}
+
 /* Le conteneur blanc */
 .white-frame-double {
     background-color: white;
