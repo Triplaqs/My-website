@@ -40,6 +40,13 @@ body {
     text-decoration: none;
 }
 
+.logo {
+    font-size: 1.8rem;
+    font-weight: 550;
+    color: white;
+    text-decoration: none;
+}
+
 .home {
     font-size: 1.4rem;
     text-decoration: none;
