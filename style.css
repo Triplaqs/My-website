@@ -45,6 +45,8 @@ body {
     font-weight: 800;
     color: white;
     text-decoration: none;
+    height: 25px;
+    weight: auto;
 }
 
 .home {
