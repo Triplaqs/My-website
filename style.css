@@ -553,3 +553,18 @@ body {
     background-color: #ecf0f1 !important; /* Gris très clair */
     font-weight: 800;
 }
+
+/* --- STYLE DES CHIFFRES RÉSOLUS --- */
+
+/* On cible spécifiquement l'input qui a la classe .solved */
+#grid-container input.cell.solved { 
+    color: #27ae60 !important;       /* Un beau vert */
+    background-color: #f0fff4 !important; /* Un fond très légèrement vert pour les distinguer */
+    font-weight: 800 !important;     /* On met en gras */
+    border-color: #27ae60 !important;
+}
+
+/* Style optionnel pour le focus sur une case résolue */
+#grid-container input.cell.solved:focus {
+    box-shadow: 0 0 8px rgba(39, 174, 96, 0.4) !important;
+}
