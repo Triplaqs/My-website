@@ -72,6 +72,116 @@
             <p>To conclude, the Takuzu form Correction Code might be very efficient for data transmission with a small amount of data loss. 
                 However, the structuration of a data sequence into a Takuzu grid seems very limited. Furthermore in real life, we don't actually know where are the data losses, making this method unusable.
             </p>
+
+    <h1>Takuzu Solver (WASM)</h1>
+
+    <div class="controls">
+        <label>Taille : 
+            <select id="size-select" onchange="generateGrid()">
+                <option value="4">4x4</option>
+                <option value="6" selected>6x6</option>
+                <option value="8">8x8</option>
+                <option value="10">10x10</option>
+            </select>
+        </label>
+        <button onclick="solveGrid()">RÉSOUDRE</button>
+        <button onclick="generateGrid()">Reset</button>
+    </div>
+
+    <div id="grid-container"></div>
+    <div id="status"></div>
+
+    <script src="../scripts/takuzu.js"></script>
+
+    <script>
+        let currentSize = 6;
+
+        // Génère les inputs HTML
+        function generateGrid() {
+            currentSize = parseInt(document.getElementById('size-select').value);
+            const container = document.getElementById('grid-container');
+            
+            // Configuration CSS de la grille dynamique
+            container.style.gridTemplateColumns = `repeat(${currentSize}, 50px)`;
+            container.innerHTML = '';
+
+            for (let i = 0; i < currentSize * currentSize; i++) {
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.className = 'cell';
+                input.maxLength = 1;
+                input.dataset.index = i;
+                
+                // Validation simple : seulement 0 ou 1
+                input.oninput = function() {
+                    this.value = this.value.replace(/[^01]/g, '');
+                };
+                container.appendChild(input);
+            }
+            document.getElementById('status').innerText = "";
+        }
+
+        // Fonction appelée par le bouton "Résoudre"
+        function solveGrid() {
+            if (!Module._solve_wrapper) {
+                alert("Le module WASM n'est pas encore chargé. Attendez un instant.");
+                return;
+            }
+
+            const cells = document.querySelectorAll('.cell');
+            const n = currentSize;
+            
+            // 1. Préparer les données pour le C
+            // On utilise un tableau typé JS (Int32Array correspond au 'int' du C)
+            const inputData = new Int32Array(n * n);
+            
+            cells.forEach((cell, index) => {
+                const val = cell.value;
+                // Si vide, on met -1, sinon la valeur (0 ou 1)
+                inputData[index] = val === '' ? -1 : parseInt(val);
+            });
+
+            // 2. Allouer de la mémoire dans le TAS (Heap) du module WASM
+            // 4 octets par entier (32-bit integer)
+            const numBytes = n * n * 4;
+            const dataPtr = Module._malloc(numBytes);
+
+            // 3. Copier les données JS vers la mémoire C
+            // HEAP32 est la vue de la mémoire en entiers 32 bits
+            // dataPtr >> 2 divise l'adresse mémoire par 4 pour obtenir l'index du tableau
+            Module.HEAP32.set(inputData, dataPtr >> 2);
+
+            // 4. Appeler la fonction C
+            console.log("Appel du solveur C...");
+            const success = Module._solve_wrapper(dataPtr, n);
+
+            if (success) {
+                // 5. Lire le résultat depuis la mémoire C
+                // On crée une vue sur la zone mémoire modifiée par le C
+                const resultData = Module.HEAP32.subarray(dataPtr >> 2, (dataPtr >> 2) + n * n);
+
+                // 6. Mettre à jour l'affichage
+                cells.forEach((cell, index) => {
+                    if (cell.value === '') { // Si c'était une case vide
+                        cell.value = resultData[index];
+                        cell.classList.add('solved'); // Petit effet visuel
+                    }
+                });
+                document.getElementById('status').innerText = "Résolu avec succès !";
+            } else {
+                document.getElementById('status').innerText = "Impossible de résoudre (Invalide ou trop complexe).";
+            }
+
+            // 7. Libérer la mémoire (très important !)
+            Module._free(dataPtr);
+        }
+
+        // Initialisation au chargement
+        Module.onRuntimeInitialized = function() {
+            generateGrid();
+            console.log("WASM Chargé et prêt");
+        };
+        </script>
     </main>
 </body>
 </html>
