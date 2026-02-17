@@ -73,9 +73,11 @@
                 However, the structuration of a data sequence into a Takuzu grid seems very limited. Furthermore in real life, we don't actually know where are the data losses, making this method unusable.
             </p>
 
+    <!--===============-->
     <!--PASSAGE AU TEST-->
+    <!--===============-->
 
-    <h1 class="project-title">Give a try to the Takuzu Solver</h1>
+    <h1 class="project-title">Give the Takuzu Solver a try</h1>
 
     <div class="controls">
         <label>Grid size : 
@@ -169,9 +171,9 @@
                         cell.classList.add('solved'); // Petit effet visuel
                     }
                 });
-                document.getElementById('status').innerText = "Résolu avec succès !";
+                document.getElementById('status').innerText = "Solved!";
             } else {
-                document.getElementById('status').innerText = "Impossible de résoudre (Invalide ou trop complexe).";
+                document.getElementById('status').innerText = "Impossible to solve (Invalid grid or unsolvable).";
             }
 
             // 7. Libérer la mémoire (très important !)
