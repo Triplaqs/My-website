@@ -570,6 +570,13 @@ body {
 }
 
 /* --- COULEURS DU MESSAGE DE STATUT --- */
+/* --- STYLE DU MESSAGE DE STATUT (Texte sous la grille) --- */
+#status {
+    margin-top: 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
 .status-success {
     color: #27ae60 !important; /* Vert */
     font-weight: bold;
