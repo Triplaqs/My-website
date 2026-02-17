@@ -19,6 +19,8 @@ body {
     min-height: 100vh;
 }
 
+.controls { margin-bottom: 20px; }
+
 /* --- 3. HEADER & NAV --- */
 .header {
     display: flex;
