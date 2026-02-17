@@ -130,7 +130,7 @@
         // Fonction appelée par le bouton "Résoudre"
         function solveGrid() {
             if (!Module._solve_wrapper) {
-                alert("WASM module wasn't charged yet. Please wait a bit.");
+                alert("WASM module hasn't charged yet. Please wait a bit.");
                 return;
             }
 
@@ -140,12 +140,30 @@
             // 1. Préparer les données pour le C
             // On utilise un tableau typé JS (Int32Array correspond au 'int' du C)
             const inputData = new Int32Array(n * n);
-            
+
+            const statusDiv = document.getElementById('status');
+            let isGridEmpty = true;
             cells.forEach((cell, index) => {
-                const val = cell.value;
+                const val = cell.value.trim();
+                if(val === ''){
+                    inputData[index] = -1;
+                } else {
+                    inputData[index]= parseInt(val);
+                    isGridEmpty = false; //not empty
+                }
                 // Si vide, on met -1, sinon la valeur (0 ou 1)
-                inputData[index] = val === '' ? -1 : parseInt(val);
+                //inputData[index] = val === '' ? -1 : parseInt(val);
             });
+
+            //gestion si grille vide
+            if (isGridEmpty) {
+                statusDiv.innerText = "Error: Grid is empty!";
+                statusDiv.className = "status-error"; // Applique le rouge
+                return; // On stoppe tout ici
+            }
+
+            statusDiv.innerText = "Solving...";
+            statusDiv.className = "";
 
             // 2. Allouer de la mémoire dans le TAS (Heap) du module WASM
             // 4 octets par entier (32-bit integer)
@@ -175,8 +193,10 @@
                     }
                 });
                 document.getElementById('status').innerText = "Solved!";
+                statusDiv.className = "status-success";
             } else {
                 document.getElementById('status').innerText = "Impossible to solve (Invalid grid or unsolvable).";
+                statusDiv.className = "status-error";
             }
 
             // 7. Libérer la mémoire (très important !)
@@ -186,7 +206,7 @@
         // Initialisation au chargement
         Module.onRuntimeInitialized = function() {
             generateGrid();
-            console.log("WASM Chargé et prêt");
+            console.log("WASM charged and ready.");
         };
         </script>
     </main>
