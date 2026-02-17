@@ -130,7 +130,7 @@
         // Fonction appelée par le bouton "Résoudre"
         function solveGrid() {
             if (!Module._solve_wrapper) {
-                alert("Le module WASM n'est pas encore chargé. Attendez un instant.");
+                alert("WASM module wasn't charged yet. Please wait a bit.");
                 return;
             }
 
@@ -158,7 +158,7 @@
             Module.HEAP32.set(inputData, dataPtr >> 2);
 
             // 4. Appeler la fonction C
-            console.log("Appel du solveur C...");
+            console.log("C Solver call...");
             const success = Module._solve_wrapper(dataPtr, n);
 
             if (success) {
