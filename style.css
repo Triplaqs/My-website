@@ -19,31 +19,51 @@ body {
     min-height: 100vh;
 }
 
-/* Centrage des contrôles (Taille, boutons) */
+/* --- FIX ALIGNEMENT CONTROLES TAKUZU --- */
+
 .controls {
-    display: flex;         /* On active le mode Flexbox */
-    justify-content: center; /* On centre horizontalement */
-    align-items: center;     /* On aligne verticalement (au cas où ils n'aient pas la même hauteur) */
-    gap: 15px;              /* On crée un espace régulier entre chaque élément */
-    margin: 20px 0;         /* On ajoute de l'espace en haut et en bas */
-    flex-wrap: wrap;        /* Si l'écran est trop petit, les boutons passent à la ligne proprement */
+    display: flex !important;
+    flex-direction: row !important; /* Aligne en ligne */
+    justify-content: center !important; /* Centre horizontalement */
+    align-items: center !important;     /* Centre verticalement */
+    gap: 20px !important;               /* Espace entre les éléments */
+    margin: 30px auto !important;       /* Espace en haut/bas et centre le bloc */
+    width: 100% !important;
+    flex-wrap: wrap !important;         /* Passe à la ligne sur mobile */
 }
 
-/* Optionnel : Un petit coup de propre sur les boutons pour qu'ils ne soient pas "bruts" */
-.controls button, .controls select {
-    padding: 8px 15px;
-    border-radius: 5px;
-    border: 1px solid var(--accent);
-    background: var(--surface);
+/* On force la largeur en "auto" pour contrer le width: 100% global du site */
+.controls label, 
+.controls select, 
+.controls button {
+    width: auto !important; 
+    display: inline-block !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+}
+
+.controls label {
     color: var(--text);
-    cursor: pointer;
-    font-family: inherit;
-    transition: all 0.2s;
+    font-weight: bold;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px;
+}
+
+/* Optionnel : Style des boutons pour qu'ils soient plus visibles sur ton fond sombre */
+.controls button {
+    padding: 10px 20px !important;
+    background-color: var(--accent) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: transform 0.2s !important;
 }
 
 .controls button:hover {
-    background: var(--accent);
-    color: white;
+    transform: scale(1.05);
+    filter: brightness(1.2);
 }
 
 /* --- 3. HEADER & NAV --- */
