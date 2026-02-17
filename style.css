@@ -19,9 +19,31 @@ body {
     min-height: 100vh;
 }
 
-.controls { 
-    align-items: center;
-    margin-bottom: 20px; 
+/* Centrage des contrôles (Taille, boutons) */
+.controls {
+    display: flex;         /* On active le mode Flexbox */
+    justify-content: center; /* On centre horizontalement */
+    align-items: center;     /* On aligne verticalement (au cas où ils n'aient pas la même hauteur) */
+    gap: 15px;              /* On crée un espace régulier entre chaque élément */
+    margin: 20px 0;         /* On ajoute de l'espace en haut et en bas */
+    flex-wrap: wrap;        /* Si l'écran est trop petit, les boutons passent à la ligne proprement */
+}
+
+/* Optionnel : Un petit coup de propre sur les boutons pour qu'ils ne soient pas "bruts" */
+.controls button, .controls select {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--accent);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.controls button:hover {
+    background: var(--accent);
+    color: white;
 }
 
 /* --- 3. HEADER & NAV --- */
