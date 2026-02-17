@@ -168,7 +168,8 @@
 
                 // 6. Mettre à jour l'affichage
                 cells.forEach((cell, index) => {
-                    if (cell.value === '') { // Si c'était une case vide
+                    //if (cell.value === '') { // Si c'était une case vide
+                    if (cell.value.trim() === '') {
                         cell.value = resultData[index];
                         cell.classList.add('solved'); // Petit effet visuel
                     }
