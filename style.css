@@ -22,7 +22,7 @@ body {
 /* --- Sections trop larges ? --- */
 
 section {
-    padding: 10px !important;
+    padding: 0 !important;
     min-height: auto !important;
     display: block; /* Pour s'assurer qu'elle n'est pas en flex/grid par erreur */
 }
