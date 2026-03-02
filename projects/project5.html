@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Maze Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../style.css"> 
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <link rel="icon" type="image/png" href="../attachments/mask.ico">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="home">🏠</a>
+        <a href="../about.html" class="logo">Triplaqs</a>
+        <a href="../about.html" class="logo-about"><em><i class="fa-solid fa-user-circle" aria-hidden="true"></i> About me  </em></a>
+    </header>
+
+    <main class="project-container">
+        
+        <h1 class="project-title">Maze Game</h1>
+        <p class="project-intro">A 3D game of navigating a generated 2D maze.</p>
+        <!--<a href="https://github.com/Triplaqs/Phoneme-Mask" class="custom-link"><i class="fa-brands fa-github"></i> <em> Github Link</em> <i class="fa fa-external-link" aria-hidden="true"></i></a>-->
+
+        <section class="visual-block">
+            <h3>Theorical aspect: the code</h3>
+            <p>I sculpted a 3D bust on Blender. </p>
+            <div class="white-frame">
+                 <img src="../attachments/sculpt.png" alt="Bust on Blender">
+            </div>
+            <p>Here's a 3D view of the Bust:</p>
+            <model-viewer 
+                src="../attachments/bustonly3.glb" 
+                alt="Bust displayed in 3D" 
+                auto-rotate 
+                camera-controls>
+            </model-viewer>
+            <p>Then I did the retopology of a surface mesh mask around the face.  </p>
+            <div class="white-frame">
+                 <img src="../attachments/maskface.png" alt="Mask on Blender">
+            </div>
+            <p>Here's a 3D view of the Mask:</p>
+            <model-viewer 
+                src="../attachments/maskonly2.glb" 
+                alt="Mask displayed in 3D" 
+                auto-rotate 
+                camera-controls>
+            </model-viewer>
+        </section>
+
+        <section class="visual-block">
+            <h3>Pipeline to C++ and OpenGL</h3>
+            <p>After completing the 3D Mask, I exported the vertexes of the file using a Python script ran directly in Blender (<nobr><a href="https://github.com/Triplaqs/Phoneme-Mask/blob/main/scripts/extract_vertices_edges.py" class="custom-link"> here's the link to the file</em> <i class="fa fa-external-link" aria-hidden="true"></i></a></nobr>).
+                The script writes the data directly into a C++ file included in my main.cpp with a header (in which I made the data set extern , so that it can be accessed, used and edited everywhere).
+                <br>From there, I could use OpenGL to display the mask in a window as follows:
+            </p>
+            <div class="white-frame">   
+                 <img src="../attachments/neutral_face.png" alt="Mask displayed on OpenGL">
+            </div>
+        </section>
+
+        <section class="visual-block">
+            <h3>Animation</h3>
+            <p>I made all the phonemes (mouth shapes associated with a specific sound) in Blender. Following this, I exported them all to my C++ project.
+                <br>Finally, I displayed a set of vertices that I interpolated from one phoneme to another one. Here's a sample of the transition from neutral face to "a" phoneme:
+            </p>
+            <div class="white-frame">   
+                 <img src="../attachments/neutral_to_a.gif" alt="Sample of Mask animation">
+            </div>
+        </section>
+
+        <section class="visual-block">
+            <h3>Speaking</h3>
+            <p>
+                Now, we can animate a succession of phonemes, let's give sense to it. We want to animate sentences, and any sentence.
+                <br>So I made a dictionnary/map that associates a sequence of letters to a phoneme id number (<em>cf</em> next picture).
+            </p>
+            <div class="white-frame-double">   
+                 <img src="../attachments/translate.png" alt="Phonemes dictionnary" class="img-small">
+            </div>
+            <p>
+                After improving the interpolating system in order to be able to do it successively. And after making algorithms to manipulate strings to turn them into sequences of phonemes id numbers:
+                <br>I could finally develop the feature; make the mask animated to visually pronounce the user's sentence input.
+            </p>
+            <p>Here's a recording of the program. (The translating of texts into Phonemes is based on french pronounciation, so the examples are french sentences).
+            </p>
+            <div class="white-frame">   
+                <video controls width="550">
+                    <source src="../attachments/speaking.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
+                </video>
+            </div>
+        </section>
+
+        <section class="visual-block">
+            <h3>Better interaction</h3>
+            <p>
+                I made a better interaction with the user by using a ImGui Window to get the phrase to read.
+            </p>
+            <div class="white-frame">
+                 <img src="../attachments/textbar.png" alt="ImGui Window">
+            </div>
+            <p>
+                Here are examples of the results:
+            </p>
+            <div class="white-frame">   
+                <video controls width="415">
+                    <source src="../attachments/textbar.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
+                </video>
+                <video controls width="415">
+                    <source src="../attachments/ayayaya.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
+                </video>
+            </div>
+        </section>
+
+        <section class="visual-block">
+            <h3>Moving through space</h3>
+            <p>To better appreciate the mask speaking I added a control over the camera position and orientation with the mouse and the scroll wheel.</p>
+            <div class="white-frame">   
+                <video controls width="415">
+                    <source src="../attachments/camera2.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
+                </video>
+            </div>
+        </section>
+        <!--
+        <section class="visual-block">
+            <h3>Test it online</h3>
+            <p>Here's an adaptation of the OpenGL into WebGL made with
+            </p>
+            <div class="white-frame">   
+                 <img src="../attachments/neutral_to_a.gif" alt="Sample of Mask animation">
+            </div>
+        </section>
+        -->
+    </main>
+</body>
+</html>
