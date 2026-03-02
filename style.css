@@ -21,12 +21,6 @@ body {
 
 /* --- Sections trop larges ? --- */
 
-section {
-    margin: 0 !important;
-    padding: 0 !important;
-    min-height: auto !important;
-    display: block; /* Pour s'assurer qu'elle n'est pas en flex/grid par erreur */
-}
 
 /* --- FIX ALIGNEMENT CONTROLES TAKUZU --- */
 
