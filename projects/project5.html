@@ -30,6 +30,36 @@
         <p class="project-intro">A 3D game of navigating a generated 2D maze.</p>
         <!--<a href="https://github.com/Triplaqs/Phoneme-Mask" class="custom-link"><i class="fa-brands fa-github"></i> <em> Github Link</em> <i class="fa fa-external-link" aria-hidden="true"></i></a>-->
 
+        <!-- THE CODE -->
+        <section class="visual-block">
+            <h3>Theorical aspect: the code</h3>
+            <p>The objective is now to generate a solvable 2D maze in C++ and then convert it to a 3D maze in Unreal Engine.</p>
+            <p>Here is the approach of the generation algorithm:</p>
+            <ul>
+                <li>Generate a 2D grid of cells</li>
+                <li>Use a depth-first search (DFS) algorithm to carve out paths</li>
+                <li>Ensure the maze is solvable by guaranteeing a path from start to end</li>
+            </ul>
+            <p>We would define the center of the maze as the starting point so we have to ensure that the end point is reachable from it.</p>
+        </section>
+
+        <!-- UNREAL ENGINE -->
+        <section class="visual-block">
+            <h3>Practical aspect: the visuals</h3>
+            <p>We will here use Unreal Engine 5.6 to implement the DFS algorithm in C++ and make the maze take shape in 3D.</p>
+            <p>I created a TopDown view project in Unreal Engine to ease the begining.</p>
+            <div class="white-frame">
+                 <img src="../attachments/project5/empty_square.png" alt="Empty floor on Unreal">
+            </div>
+            <p>After implementing the 3D maze generation in Unreal Engine, here is a screenshot of the result (in the view port and ingame):</p>
+            <div class="white-frame-double">
+                 <img src="../attachments/project5/maze.png" alt="Generated maze in the viewport">
+                 <img src="../attachments/project5/maze_ingame.png" alt="Generated maze in game">
+            </div>
+            <p>The movements were initially made with the mouse, so I added keyboard controls with the Unreal Blueprints for better navigation.</p>
+        </section>
+
+        <!-- BLENDER -->
         <section class="visual-block">
             <h3>3D Basis: the walls</h3>
             <p>Before attacking the theory I wanted to build a "unit-wall" to be used in the 3D maze construction.</p>
@@ -46,17 +76,10 @@
                 camera-controls>
             </model-viewer>
         </section>
+    
+        
 
-        <section class="visual-block">
-            <h3>Theorical aspect: the code</h3>
-            <p>The objective is now to generate a solvable 2D maze in C++ and then convert it to a 3D maze in Unreal Engine.</p>
-            <p>Here is the approach of the generation algorithm:</p>
-            <ul>
-                <li>Generate a 2D grid of cells</li>
-                <li>Use a depth-first search (DFS) algorithm to carve out paths</li>
-                <li>Ensure the maze is solvable by guaranteeing a path from start to end</li>
-            </ul>
-        </section>
+        
     </main>
 </body>
 </html>
