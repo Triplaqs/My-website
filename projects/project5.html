@@ -40,7 +40,7 @@
                 <li>Use a depth-first search (DFS) algorithm to carve out paths</li>
                 <li>Ensure the maze is solvable by guaranteeing a path from start to end</li>
             </ul>
-            <p>We would define the center of the maze as the starting point so we have to ensure that this specific point exists (not a wall) and that the end point is reachable from it.</p>
+            <p>We would define the center of the maze as the starting point and an end at the top corner (fixed) so we have to ensure that this specific start point exists (not a wall) and that the end point is reachable from it.</p>
         </section>
 
         <!-- UNREAL ENGINE -->
@@ -66,13 +66,20 @@
             <div class="white-frame">   
                  <div class="white-frame">
                     <img src="../attachments/project5/blueprint_walk.png" alt="Generated maze in the viewport" class="img-mid-maze">
-            </div>
+                </div>
                 <video controls width="415">
                     <source src="../attachments/project5/walking.mp4" type="video/mp4" />
                     <!--<a href="../attachments/speaking.mp4">MP4</a>-->
                 </video>
             </div>
             <p>Before adding our own Blender-made assets we have to make a fully playable game in Unreal Engine. This involves implementing a real end condition (a winning system) and a restart mechanism.</p>
+            <p>So I added a TriggerBox at the end of the maze to detect when the player reaches the end. It automatically restart the level (with a new random generated maze) for now.</p>
+            <div class="white-frame">   
+                <video controls width="415">
+                    <source src="../attachments/project5/triggerbox.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
+                </video>
+            </div>
         </section>
 
         <!-- BLENDER -->
