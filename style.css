@@ -343,6 +343,11 @@ body {
     width: auto;
 }
 
+.img-mid {
+    height: 80% !important; 
+    width: auto;
+}
+
 .img-small-bigger {
     height: 300px !important; 
     width: auto;
