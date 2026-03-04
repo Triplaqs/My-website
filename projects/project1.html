@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../style.css"> 
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
-    <link rel="icon" type="image/png" href="../attachments/mask.ico">
+    <link rel="icon" type="image/png" href="../attachments/project1/mask.ico">
 </head>
 <body>
     <header class="header">
@@ -25,22 +25,22 @@
             <h3>3D Foundations</h3>
             <p>I sculpted a 3D bust on Blender. </p>
             <div class="white-frame">
-                 <img src="../attachments/sculpt.png" alt="Bust on Blender">
+                 <img src="../attachments/project1/sculpt.png" alt="Bust on Blender">
             </div>
             <p>Here's a 3D view of the Bust:</p>
             <model-viewer 
-                src="../attachments/bustonly3.glb" 
+                src="../attachments/project1/bustonly3.glb" 
                 alt="Bust displayed in 3D" 
                 auto-rotate 
                 camera-controls>
             </model-viewer>
             <p>Then I did the retopology of a surface mesh mask around the face.  </p>
             <div class="white-frame">
-                 <img src="../attachments/maskface.png" alt="Mask on Blender">
+                 <img src="../attachments/project1/maskface.png" alt="Mask on Blender">
             </div>
             <p>Here's a 3D view of the Mask:</p>
             <model-viewer 
-                src="../attachments/maskonly2.glb" 
+                src="../attachments/project1/maskonly2.glb" 
                 alt="Mask displayed in 3D" 
                 auto-rotate 
                 camera-controls>
@@ -54,7 +54,7 @@
                 <br>From there, I could use OpenGL to display the mask in a window as follows:
             </p>
             <div class="white-frame">   
-                 <img src="../attachments/neutral_face.png" alt="Mask displayed on OpenGL">
+                 <img src="../attachments/project1/neutral_face.png" alt="Mask displayed on OpenGL">
             </div>
         </section>
 
@@ -64,7 +64,7 @@
                 <br>Finally, I displayed a set of vertices that I interpolated from one phoneme to another one. Here's a sample of the transition from neutral face to "a" phoneme:
             </p>
             <div class="white-frame">   
-                 <img src="../attachments/neutral_to_a.gif" alt="Sample of Mask animation">
+                 <img src="../attachments/project1/neutral_to_a.gif" alt="Sample of Mask animation">
             </div>
         </section>
 
@@ -75,7 +75,7 @@
                 <br>So I made a dictionnary/map that associates a sequence of letters to a phoneme id number (<em>cf</em> next picture).
             </p>
             <div class="white-frame-double">   
-                 <img src="../attachments/translate.png" alt="Phonemes dictionnary" class="img-small">
+                 <img src="../attachments/project1/translate.png" alt="Phonemes dictionnary" class="img-small">
             </div>
             <p>
                 After improving the interpolating system in order to be able to do it successively. And after making algorithms to manipulate strings to turn them into sequences of phonemes id numbers:
@@ -85,8 +85,8 @@
             </p>
             <div class="white-frame">   
                 <video controls width="550">
-                    <source src="../attachments/speaking.mp4" type="video/mp4" />
-                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
+                    <source src="../attachments/project1/speaking.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/project1/speaking.mp4">MP4</a>-->
                 </video>
             </div>
         </section>
@@ -97,19 +97,19 @@
                 I made a better interaction with the user by using a ImGui Window to get the phrase to read.
             </p>
             <div class="white-frame">
-                 <img src="../attachments/textbar.png" alt="ImGui Window">
+                 <img src="../attachments/project1/textbar.png" alt="ImGui Window">
             </div>
             <p>
                 Here are examples of the results:
             </p>
             <div class="white-frame">   
                 <video controls width="415">
-                    <source src="../attachments/textbar.mp4" type="video/mp4" />
-                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
+                    <source src="../attachments/project1/textbar.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/project1/speaking.mp4">MP4</a>-->
                 </video>
                 <video controls width="415">
-                    <source src="../attachments/ayayaya.mp4" type="video/mp4" />
-                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
+                    <source src="../attachments/project1/ayayaya.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/project1/speaking.mp4">MP4</a>-->
                 </video>
             </div>
         </section>
@@ -119,8 +119,8 @@
             <p>To better appreciate the mask speaking I added a control over the camera position and orientation with the mouse and the scroll wheel.</p>
             <div class="white-frame">   
                 <video controls width="720">
-                    <source src="../attachments/camera2.mp4" type="video/mp4" />
-                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
+                    <source src="../attachments/project1/camera2.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/project1/speaking.mp4">MP4</a>-->
                 </video>
             </div>
         </section>
@@ -130,7 +130,7 @@
             <p>Here's an adaptation of the OpenGL into WebGL made with
             </p>
             <div class="white-frame">   
-                 <img src="../attachments/neutral_to_a.gif" alt="Sample of Mask animation">
+                 <img src="../attachments/project1/neutral_to_a.gif" alt="Sample of Mask animation">
             </div>
         </section>
         -->
