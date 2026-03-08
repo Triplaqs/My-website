@@ -603,7 +603,7 @@ body {
 /* --- JEU VIDEI STREAMÉ --- */
 .video-placeholder {
     width: 100%;
-    height: 500px; /* À ajuster*/
+    height: 600px; /* À ajuster*/
     background-color: #222;
     display: flex;
     justify-content: center;
