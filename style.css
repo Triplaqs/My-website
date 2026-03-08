@@ -599,3 +599,24 @@ body {
     color: #e74c3c !important; /* Rouge */
     font-weight: bold;
 }
+
+/* --- JEU VIDEI STREAMÉ --- */
+.video-placeholder {
+    width: 100%;
+    height: 500px; /* À ajuster*/
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+#load-stream-btn {
+    padding: 15px 30px;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 5px;
+}
