@@ -62,8 +62,20 @@
             <p>To make the simulation interactive, we first add a ImGui window within the OpenGL window, allowing us to edit the simulation parameters in real-time. The window can be hide by pressing 'H' to fully enjoy the simulation.</p>
             <p>Here is the result of this addition:</p>
             <div class="white-frame">
-                 <video controls width="415">
+                 <video controls width="720">
                     <source src="../attachments/project2/fluid_imgui.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/project2/speaking.mp4">MP4</a>-->
+                </video>
+            </div>
+        </section>
+
+        <section class="visual-block">
+            <h3>More interactivity</h3>
+            <p>We added several features such as obstacle manipulation (by Satine) and multiple points and lines as other fluid sources (by Gaëlle).</p>
+            <p>Here are the results of these additions:</p>
+            <div class="white-frame">
+                 <video controls width="720">
+                    <source src="../attachments/project2/ob_line.mp4" type="video/mp4" />
                     <!--<a href="../attachments/project2/speaking.mp4">MP4</a>-->
                 </video>
             </div>
@@ -74,8 +86,9 @@
             <h3>What's next?</h3>
             <p>Our objectives from now on are first to get a more complete set of features to interact with the simulation, such as:</p>
             <ul>
-                <li>Implementing boundary conditions and obstacles that are controllable with the mouse</li>
+                <li>Implementing several obstacles at the same time</li>
                 <li>Improving the user interface with more controls and maybe the ability to interact at a distance with a Bluetooth-connected phone</li>
+                <li>Adding separated sources with different color-temperature sources</li>
             </ul>
             <p>And then use OpenMP to use multiple CPU cores in order to expand the grid size to get a more detailed simulation while keeping a high frame rate.</p>
         
