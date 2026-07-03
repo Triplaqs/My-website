@@ -49,7 +49,7 @@
             </div>
         </section>
 
-         <section class="visual-block">
+        <section class="visual-block">
             <h3>Setting the Scene (Houdini)</h3>
             <p>So we can now import our camera movements as </p>
 
@@ -67,16 +67,43 @@
 
         </section>
 
-        <div class="white-frame">
-            <div class="blue-frame">
-                <model-viewer 
-                    src="../attachments/project7/snowflake3D.glb" 
-                    alt="3D Snowflake" 
-                    auto-rotate 
-                    camera-controls>
-                </model-viewer>
+        <section class="visual-block">
+            <h3>Adding primitives snowflakes (particles) </h3>
+            <p>We generate a grid as the cieling of the room where the video takes place.</p>
+            <p>With the following Node graph we are able to add wind to simulate gravity with a more natural movement.</p>
+            <div class="white-frame">
+                 <img src="../attachments/project7/branchement_particules.png" alt="Node graph of particles">
             </div>
-        </div>
+            <p>And there we are!</p>
+            <div class="white-frame">
+                <video controls width="720">
+                    <source src="../attachments/project7/particules_falling.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </section>
+
+        <section class="visual-block">
+            <h3>Adding a snowflake shape to those particles (Houdini + Blender)</h3>
+            <p>We first of all create a 3D model of a snowflake in Blender. </p>
+            <div class="white-frame">
+                 <img src="../attachments/project7/snowflake.png" alt="Snowflake in Blender">
+            </div>
+            <p>And here's the 3D view:</p>
+            <div class="white-frame">
+                <div class="blue-frame">
+                    <model-viewer 
+                        src="../attachments/project7/snowflake3D.glb" 
+                        alt="3D Snowflake" 
+                        auto-rotate 
+                        camera-controls>
+                    </model-viewer>
+                </div>
+            </div>
+            
+            <p>We now have to import the snowflake model into Houdini and use it as the particles' shape.</p>
+        </section>
+
+        
         
 
         <!--
