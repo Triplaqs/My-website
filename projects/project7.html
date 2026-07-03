@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../style.css"> 
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
     <script type="text/javascript" src="https://www.maths.nottingham.ac.uk/plp/pmadw/LaTeXMathML.js"></script>
-    <link rel="icon" type="image/png" href="../attachments/project6/icon.ico">
+    <link rel="icon" type="image/png" href="../attachments/project7/ice.ico">
 </head>
 <body>
     <header class="header">
@@ -18,38 +18,26 @@
 
     <main class="project-container">
         
-        <h1 class="project-title">Surface-functions Display</h1>
-        <p class="project-intro">Displaying mathematical surface functions in 3D (in order to generalize it to 3D Surfaces mapping).</p>
-        <a href="https://github.com/Triplaqs/Function-Display" class="custom-link"><i class="fa-brands fa-github"></i> <em> Github Link</em> <i class="fa fa-external-link" aria-hidden="true"></i></a>
+        <h1 class="project-title">Basic VFX in Houdini</h1>
+        <p class="project-intro">Adding falling snow to a video with Houdini (mostly) and Blender.</p>
 
         <section class="visual-block">
-            <h3>First display</h3>
-            <p>Here's the display of the function $f : (x, y) \in \mathbb{R}^2 \mapsto xy \in \mathbb{R}$ with OpenGL. </p>
-                 <img src="../attachments/project6/display_xy.png" alt="First result">
-            </div>
-            <p>The chosen normals (inducing the light reflexion) are arbitrary, there's still no derivative computed.</p>
+            <h3>Camera Tracking</h3>
+            <p>First, to add 3D objects to a moving video, we have to identify the camera movement and position in order to make the the 3D models ruled by those physical constraints.</p>
+            
+            <p>Here's the video we chose to work with:</p>
 
-            <h3>3D view manipulation with a mouse</h3>
+            <video controls width="720">
+                    <source src="../attachments/project6/display2.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
+            </video>
+
             <p>I added a camera controlled by the mouse; allowing us to navigate the 3D space.</p>
             <div class="white-frame">
-                 <img src="../attachments/project6/display_xy.gif" alt="camera mainpulation">
+                 <img src="../attachments/project7/display_xy.gif" alt="camera mainpulation">
             </div>
             <p>The color of the GIF is a bit jerky, <a href="../attachments/project6/display_xy.mp4" class="custom-link"><i><b>here's a link to the video </b></i></a> for a better view.</p>
         </section>
-            
-        <section class="visual-block">
-            <h3>Enhanced display and possibilities</h3>
-            <p>The test with the function $f_1 : (x, y) \mapsto xy$ worked so I added a IMGUI settings window to adjust the definition domains. Along with this I added a way to avoid calculation issues if the function displayed comes to diverge. Once the displayed function can diverge we can display a more complexe function. Let's display $f_2 : (x, y) \mapsto \frac{x + y}{xy}$ with OpenGL. </p>
-            <div class="white-frame">      
-                <video controls width="720">
-                    <source src="../attachments/project6/display2.mp4" type="video/mp4" />
-                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
-                </video>
-            </div>
-                <p>First observation: The function has display artefacts around its divergence points. That's because the mesh displayed is a continuous surface while the function has discontinuities points. </p>
-            <p>Second observation: I still didn't implement the derivative to calculate the normales in order to have a better light reflection.</p>
-            </section>
-            
         
 
         <!--
