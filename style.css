@@ -306,8 +306,8 @@ body {
 
 .blue-frame {
     background-color: #161b33; 
-    padding: 0px;       /* Un padding plus petit pour que le cadre soit fin */
-    border-radius: 0px;
+    padding: 4px;       /* Un padding plus petit pour que le cadre soit fin */
+    border-radius: 4px;
     box-sizing: border-box;
     
     display: flex;       /* Aligne côte à côte */
