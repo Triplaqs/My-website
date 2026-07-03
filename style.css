@@ -302,6 +302,24 @@ body {
     margin: 25px auto;   /* Centre le bloc entier dans la page */
 }
 
+/*On tente pour le model viewer*/
+
+.blue-frame {
+    background-color: #161b33; /* Bleu clair */
+    padding: 0px;       /* Un padding plus petit pour que le cadre soit fin */
+    border-radius: 0px;
+    box-sizing: border-box;
+    
+    display: flex;       /* Aligne côte à côte */
+    align-items: center; /* Centre verticalement */
+    justify-content: center;
+    gap: 20px;           /* Espace entre les deux images */
+
+    /* LA SOLUTION POUR COLLER AUX IMAGES */
+    width: fit-content;  /* Le cadre s'arrête pile après les images */
+    margin: 25px auto;   /* Centre le bloc entier dans la page */
+}
+
 .white-frame img {
     display: block;
     border-radius: 4px;
