@@ -22,7 +22,7 @@
         <p class="project-intro">Adding falling snow to a video with Houdini (mostly) and Blender.</p>
 
         <section class="visual-block">
-            <h3>Camera Tracking</h3>
+            <h3>Camera Tracking (Blender)</h3>
             <p>First, to add 3D objects to a moving video, we have to identify the camera movement and position in order to make the the 3D models ruled by those physical constraints.</p>
             
             <p>Here's the video we chose to work with:</p>
@@ -49,12 +49,32 @@
             </div>
         </section>
 
-        <model-viewer 
+         <section class="visual-block">
+            <h3>Setting the Scene (Houdini)</h3>
+            <p>So we can now import our camera movements as </p>
+
+            <p>There's a feature to track the camera movement in Blender so we scattered several points on the video to identify how it moves.</p>
+            <div class="white-frame-double">
+                 <video controls width="350">
+                    <source src="../attachments/project7/incrust_houdi.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
+                </video>
+                <video controls width="350">
+                    <source src="../attachments/project7/incrust_houdini.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
+                </video>
+            </div>
+
+        </section>
+
+        <div class="white-frame">
+            <model-viewer 
                 src="../attachments/project7/snowflake3D.glb" 
                 alt="3D Snowflake" 
                 auto-rotate 
                 camera-controls>
             </model-viewer>
+        </div>
         
 
         <!--
