@@ -305,7 +305,7 @@ body {
 /*On tente pour le model viewer*/
 
 .blue-frame {
-    background-color: #161b33; /* Bleu clair */
+    background-color: #161b33; 
     padding: 0px;       /* Un padding plus petit pour que le cadre soit fin */
     border-radius: 0px;
     box-sizing: border-box;
