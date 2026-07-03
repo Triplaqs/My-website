@@ -28,16 +28,30 @@
             <p>Here's the video we chose to work with:</p>
 
             <video controls width="720">
-                    <source src="../attachments/project6/display2.mp4" type="video/mp4" />
+                    <source src="../attachments/project7/video_origin.mp4" type="video/mp4" />
                     <!--<a href="../attachments/speaking.mp4">MP4</a>-->
             </video>
 
-            <p>I added a camera controlled by the mouse; allowing us to navigate the 3D space.</p>
-            <div class="white-frame">
-                 <img src="../attachments/project7/display_xy.gif" alt="camera mainpulation">
+            <p>There's a feature to track the camera movement in Blender so we scattered several points on the video to identify how it moves.</p>
+            <div class="white-frame-double">
+                 <img src="../attachments/project7/movementtracking.png" alt="Tracking Camera 1" class="img-mid-maze">
+                 <img src="../attachments/project7/videotracking.png" alt="Tracking Camera 2"  class="img-mid-maze">
             </div>
-            <p>The color of the GIF is a bit jerky, <a href="../attachments/project6/display_xy.mp4" class="custom-link"><i><b>here's a link to the video </b></i></a> for a better view.</p>
+
+            <p>Which led to a moving digital camera in Blender quite accurate to reality.</p>
+
+            <video controls width="720">
+                    <source src="../attachments/project7/incrustation.mp4" type="video/mp4" />
+                    <!--<a href="../attachments/speaking.mp4">MP4</a>-->
+            </video>
         </section>
+
+        <model-viewer 
+                src="../attachments/project7/snowflake.glb" 
+                alt="3D Snowflake" 
+                auto-rotate 
+                camera-controls>
+            </model-viewer>
         
 
         <!--
