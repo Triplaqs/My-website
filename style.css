@@ -208,6 +208,14 @@ body {
     margin-bottom: 50px;
 }
 
+.project-container .date {
+    text-align: center;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 50px;
+    
+}
+
 /* Style des sections à l'intérieur du ruban */
 .visual-block {
     margin-bottom: 60px;   /* Espace entre les blocs de contenu */
@@ -638,3 +646,4 @@ body {
     font-size: 1.1em;
     border-radius: 5px;
 }
+
